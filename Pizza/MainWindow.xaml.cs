@@ -23,6 +23,21 @@ namespace Pizza
         public MainWindow()
         {
             InitializeComponent();
+            summary.Text = 
+                "Jan Kowalski" + Environment.NewLine
+                + "Vegetariana na ultracienkim spodzie" + Environment.NewLine
+                + "dodatki:" + Environment.NewLine
+                + "Dodatkowy ser: cheddar" + Environment.NewLine
+                + "Sos: pikantny" + Environment.NewLine
+                + "--";
+            this.Loaded += MainWindow_Loaded;
+        }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            int min_width = 250;
+            this.MinWidth = this.Width > min_width ? this.Width : min_width;
+            this.MinHeight = this.Height;
         }
     }
 }
